@@ -8,41 +8,8 @@ import com.sample.*;
 //declare any global variables here
 
 /*
-
-// perguntar ao usuário cada uma das regras, seria um amontoado 
-// de sintomas a serem adicionados ao paciente, gerando várias 
-// produções, uma para cada sintoma
-Regras de presença dos sintomas básicos Alucinação, Delírio, 
-Desorganização do pensamento, Desorganização motora
-	
-Regra de sintomas Simultaneos por mais de um mês
-	sintomas que são simultaneos
-	
-Regra de sintomas duradouros 6 meses
-	se dos simultaneos pelo menos 1 tem q ter durado 6 ou mais meses
-
-
-// cada Regra interna a esta pode adicionar uma taxa de relevancia pra 
-// adicionar a chance de ser fase premórbida
-Regras de identificação de fase premórbida
-	// são duas regras diferentes no mínimo, pois a atenção pode ser mais 
-	// destrinchada em seus 3 tipos
-	se 	há problemas de memória e atenção,
-	
-	// relativo, mas importante 
-	se comportamentos anormais
-	
-	// pode ser repartido em alguns problemas para identificação em problema
-	// em função executiva para depois adicionar a problemas de fase premórbida
-	se problemas com funções executivas (aprendizado, resolução de problemas)
-	
-	// podem ser 3 regras, avaliação de idade e avaliação de atraso no 
-	// aprendizado de cada um separadamente
-	se nos primeiros anos de vida atraso no aprendizado de fala e marcha
-
-Regras de identificação de fase prodrômica
-
-
+regras definidas informalmente no arquivo público no drive:
+https://docs.google.com/document/d/10fd9v_hC6uxLCOvRPN_2i6fQQDVPLZf45bPHHxFyCu0/edit?usp=sharing
 */
 
 
