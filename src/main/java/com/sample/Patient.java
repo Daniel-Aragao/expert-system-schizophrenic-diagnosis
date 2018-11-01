@@ -1,6 +1,7 @@
 package com.sample;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Patient {
@@ -22,28 +23,27 @@ public class Patient {
 		return false;
 	}
 	
-	public List<Symptom> getSymptom(ESymptomType symptom) {
-		List<Symptom> symptons = new ArrayList<Symptom>();
-		
+	public Symptom getSymptom(ESymptomType symptom) {
+	
 		for(Symptom s : Symptons) {			
 			if(s.getSymptonType() == symptom) {
-				symptons.add(s);
+				return s;
 			}
 		}
 		
-		return symptons;
+		return null;
+	}
+	
+	public void setSymptom(Symptom symptom) {
+		this.Symptons.add(symptom);
 	}
 	
 	public int getMonthsOfSymptom(ESymptomType symptom) {
-		List<Symptom> symptons = getSymptom(symptom);
-		int months = 0;
+		Symptom symptons = getSymptom(symptom);
 		
-		for(Symptom s : symptons) {			
-			if(s.getMonths() > months) {
-				months = s.getMonths();
-			}
+		if(symptons != null) {
+			return symptons.getEndDate().get(Calendar.YEAR) - symptons.getStartDate().get(Calendar.YEAR);
 		}
-		
-		return months;
+		return 0;
 	}
 }

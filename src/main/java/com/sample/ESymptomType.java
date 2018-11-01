@@ -22,4 +22,17 @@ public enum ESymptomType {
 		return this.value;
 	}
 	
+	public static ESymptomType getESymptomType(int value){
+		ESymptomType eSymptomType = null;
+
+	    for(ESymptomType e : ESymptomType.values()){
+	        if(e.getValue() == value){
+	        	eSymptomType = e;
+	            break;
+	        }
+	    }
+
+	    return eSymptomType;
+	}
+	
 }
