@@ -11,22 +11,39 @@ import com.sample.Patient;
 regras definidas informalmente no arquivo público no drive:
 https://docs.google.com/document/d/10fd9v_hC6uxLCOvRPN_2i6fQQDVPLZf45bPHHxFyCu0/edit?usp=sharing
 
-
-// perguntar ao usuário cada uma das regras, seria um amontoado 
-// de sintomas a serem adicionados ao paciente, gerando várias 
-// produções, uma para cada sintoma
-
-Regras de presença dos sintomas básicos Alucinação, Delírio, 
-Desorganização do pensamento, Desorganização motora
-
 */
 
 
-rule "Paciente possui sintoma por mais de seis meses"
-    when
-        $patient: Patient()
-        eval($patient.hasSymptom(ESymptomType.Attention) && ($patient.getMonthsOfSymptom(ESymptomType.Attention) > 1))
-    then
-        System.out.println("Tem o sintoma: "+ ESymptomType.Attention);
+//rule "Paciente possui sintoma por mais de seis meses"
+//  when
+//    $patient: Patient()
+//  eval($patient.hasSymptom(ESymptomType.Attention) && ($patient.getMonthsOfSymptom(ESymptomType.Attention) > 1))
+//then
+//  System.out.println("Tem o sintoma: "+ ESymptomType.Attention);
+//end
 
-end
+rule "Verificar sintoma de alucinação"
+	when
+		$patient : Patient()
+		eval($patient.hasSymptom(ESymptomType.Hallucination) && $patient.getMonthsOfSymptom(ESymptomType.Hallucination) >= 1)
+	then
+		$patient.setAlucinacao(true);
+		$patient.setEsquizofrenia(10*0.7);
+	end
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
