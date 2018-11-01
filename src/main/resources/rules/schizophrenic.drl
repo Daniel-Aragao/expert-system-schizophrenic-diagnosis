@@ -29,4 +29,8 @@ rule "Paciente possui sintoma por mais de seis meses"
     then
         System.out.println("Tem o sintoma: "+ ESymptomType.Attention);
 
+// regra começa abaixo
+
+
+
 end
