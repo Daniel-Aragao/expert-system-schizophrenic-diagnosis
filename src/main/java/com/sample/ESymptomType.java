@@ -8,8 +8,12 @@ public enum ESymptomType {
 	EmotionalExpression(5),
 	Memory(6),
 	Attention(7),
-	LateMarch(8),
-	LateSpeech(9);
+	NegativeSymptoms(8),
+	ComportamentoAnormal(9),
+	LateMarch(10),
+	LateSpeech(11),
+	Learning(12),
+	ProblemSolve(13);
 	
 	
 	private int value;

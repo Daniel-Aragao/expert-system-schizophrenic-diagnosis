@@ -32,7 +32,7 @@ public class ProcessTest {
 			 
 			 Patient patient = new Patient();
 			 Symptom symptom = new Symptom(startDate, endDate, ESymptomType.Attention);
-			 patient.setSymptom(symptom);
+			 patient.addSymptom(symptom);
 			 
 			 kSession.insert(patient);
 			 kSession.insert(symptom);
