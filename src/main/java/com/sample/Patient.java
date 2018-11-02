@@ -242,6 +242,10 @@ public class Patient {
 		return this.idade;
 	}
 	
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
 	public int getSymptomMonthCurrency(ESymptomType eSymptomType) {
 		Symptom s = getSymptonCurrent(eSymptomType);
 		if(s == null) {

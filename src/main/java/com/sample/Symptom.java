@@ -2,6 +2,7 @@ package com.sample;
 
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 
 public class Symptom {
@@ -16,9 +17,7 @@ public class Symptom {
 	}
 	
 	public long getDays() {
-		LocalDate start = LocalDate.of(this.startDate.get(Calendar.YEAR), this.startDate.get(Calendar.MONTH), this.startDate.get(Calendar.DAY_OF_MONTH));
-		LocalDate end = LocalDate.of(this.endDate.get(Calendar.YEAR), this.endDate.get(Calendar.MONTH), this.endDate.get(Calendar.DAY_OF_MONTH));
-		return Duration.between(start, end).toDays();
+		return ChronoUnit.DAYS.between(this.startDate.toInstant(), this.endDate.toInstant());
 	}
 	
 	public boolean isConcurrent() {

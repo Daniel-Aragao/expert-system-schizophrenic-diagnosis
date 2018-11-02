@@ -28,7 +28,8 @@ rule "Verificar sintoma de alucinacao"
 	then
 		$patient.setAlucinacao(true);
 		$patient.setEsquizofrenia(10*0.7);
-		update($patient);
+		System.out.println("AlucinaÃ§Ã£o");
+		//update($patient);
 end
 
 rule "Verificar sintoma de delirio"
@@ -38,7 +39,7 @@ rule "Verificar sintoma de delirio"
 	then
 		$patient.setDelirio(true);
 		$patient.setEsquizofrenia(10*0.7);
-		update($patient);
+		//update($patient);
 end
 
 rule "Verificar sintoma de desorganizacao do pensamento"
@@ -49,7 +50,7 @@ rule "Verificar sintoma de desorganizacao do pensamento"
 	then
 		$patient.setDesorganizacaoPensamento(true);
 		$patient.setEsquizofrenia(10*0.7);
-		update($patient);
+		//update($patient);
 end
 
 rule "Verificar sintoma de desorganizacao motora"
@@ -60,7 +61,7 @@ rule "Verificar sintoma de desorganizacao motora"
 	then
 		$patient.setDesorganizacaoMotora(true);
 		$patient.setEsquizofrenia(10*0.7);
-		update($patient);
+		//update($patient);
 end
 
 rule "Verificar sintoma negativos"
@@ -71,7 +72,7 @@ rule "Verificar sintoma negativos"
 	then
 		$patient.setSintomasNegativos(true);
 		$patient.setEsquizofrenia(10*0.7);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 6"
@@ -85,7 +86,7 @@ rule "Regra 6"
 			 $patient.hasSymptom(ESymptomType.NegativeSymptoms))
 	then
 		$patient.setEsquizofrenia($patient.getEsquizofrenia()*0.5);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 7(tem que fazer ainda)"
@@ -96,17 +97,17 @@ rule "Regra 7(tem que fazer ainda)"
 	then
 		$patient.setSintomasNegativos(true);
 		$patient.setEsquizofrenia(10*0.7);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 8"
 
 	when
 		$patient : Patient()
-		eval($patient.getEsquizofrenia() >= 55)
+		eval($patient.getEsquizofrenia() >= 40)
 	then
 		$patient.setEsquizofrenico(true);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 9"
@@ -116,7 +117,7 @@ rule "Regra 9"
 		eval($patient.getIdade() <= 5)
 	then
 		$patient.setCandidato(true);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 10"
@@ -126,7 +127,7 @@ rule "Regra 10"
 		eval($patient.isCandidato() && $patient.hasSymptom(ESymptomType.Memory) && $patient.isSymptonCurrent(ESymptomType.Memory))
 	then
 		$patient.setPreMorbida(10*0.6);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 11"
@@ -136,7 +137,7 @@ rule "Regra 11"
 		eval($patient.isCandidato() && $patient.hasSymptom(ESymptomType.Attention) && $patient.isSymptonCurrent(ESymptomType.Attention))
 	then
 		$patient.setPreMorbida(10*0.6);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 12"
@@ -146,7 +147,7 @@ rule "Regra 12"
 		eval($patient.hasSymptom(ESymptomType.ComportamentoAnormal) && $patient.isSymptonCurrent(ESymptomType.ComportamentoAnormal))
 	then
 		$patient.setPreMorbida($patient.getPreMorbida() * 0.3);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 13"
@@ -155,7 +156,7 @@ rule "Regra 13"
 		eval($patient.isCandidato() && $patient.hasSymptom(ESymptomType.Learning) && $patient.isSymptonCurrent(ESymptomType.Learning))
 	then
 		$patient.setPreMorbida($patient.getPreMorbida()*0.5);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 14"
@@ -165,7 +166,7 @@ rule "Regra 14"
 		eval($patient.isCandidato() && $patient.hasSymptom(ESymptomType.ProblemSolve) && $patient.isSymptonCurrent(ESymptomType.ProblemSolve))
 	then
 		$patient.setPreMorbida($patient.getPreMorbida()*0.5);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 15"
@@ -175,7 +176,7 @@ rule "Regra 15"
 		eval($patient.isCandidato() && $patient.hasSymptom(ESymptomType.LateSpeech) && $patient.isSymptonCurrent(ESymptomType.LateSpeech))
 	then
 		$patient.setPreMorbida($patient.getPreMorbida() * 0.5);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 16"
@@ -185,7 +186,7 @@ rule "Regra 16"
 		eval($patient.isCandidato() && $patient.hasSymptom(ESymptomType.LateMarch) && $patient.isSymptonCurrent(ESymptomType.LateMarch))
 	then
 		$patient.setPreMorbida($patient.getPreMorbida() * 0.5);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 17"
@@ -195,7 +196,7 @@ rule "Regra 17"
 		eval($patient.isCandidato() && $patient.hasSymptom(ESymptomType.Memory) && ($patient.getSymptomMonthCurrency(ESymptomType.Memory) <= 18) && $patient.isSymptonCurrent(ESymptomType.Memory))
 	then
 		$patient.setProdromica(10 * 0.7 * 3);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 18"
@@ -205,7 +206,7 @@ rule "Regra 18"
 		eval($patient.isCandidato() && $patient.hasSymptom(ESymptomType.Attention) && ($patient.getSymptomMonthCurrency(ESymptomType.Attention) <= 18) && $patient.isSymptonCurrent(ESymptomType.Attention))
 	then
 		$patient.setProdromica(10 * 0.7 * 3);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 19"
@@ -215,7 +216,7 @@ rule "Regra 19"
 		eval($patient.isCandidato() && $patient.hasSymptom(ESymptomType.Delusions) && ($patient.getSymptomMonthCurrency(ESymptomType.Delusions) <= 18) && $patient.isSymptonCurrent(ESymptomType.Delusions))
 	then
 		$patient.setProdromica(10 * 0.9 * 3);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 20"
@@ -225,7 +226,7 @@ rule "Regra 20"
 		eval($patient.hasSymptom(ESymptomType.Delusions) && $patient.isSymptonCurrent(ESymptomType.Delusions))
 	then
 		$patient.setAguda(10 * 0.9 * 5);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 21"
@@ -235,7 +236,7 @@ rule "Regra 21"
 		eval($patient.hasSymptom(ESymptomType.Hallucination) && $patient.isSymptonCurrent(ESymptomType.Hallucination))
 	then
 		$patient.setAguda(10 * 0.9 * 5);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 22"
@@ -245,7 +246,7 @@ rule "Regra 22"
 		eval($patient.getMetadoDoMaximo())
 	then
 		$patient.setCronica(10 * 0.8 * 4);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 23"
@@ -255,7 +256,7 @@ rule "Regra 23"
 		eval($patient.hasSymptom(ESymptomType.NegativeSymptoms) && $patient.isSymptonCurrent(ESymptomType.NegativeSymptoms))
 	then
 		$patient.setCronica(10 * 0.8 * 4);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 24"
@@ -264,8 +265,8 @@ rule "Regra 24"
 		$patient : Patient()
 		eval($patient.getCronica() > $patient.getAguda() && $patient.getCronica() > $patient.getProdromica() && $patient.getCronica() > $patient.getPreMorbida())
 	then
-		$patient.setFase("Crônica");
-		update($patient);
+		$patient.setFase("Crï¿½nica");
+		//update($patient);
 end
 
 rule "Regra 25"
@@ -274,8 +275,8 @@ rule "Regra 25"
 		$patient : Patient()
 		eval($patient.getProdromica() > $patient.getCronica() && $patient.getProdromica() > $patient.getAguda() && $patient.getProdromica() > $patient.getPreMorbida())
 	then
-		$patient.setFase("Prodômica");
-		update($patient);
+		$patient.setFase("Prodï¿½mica");
+		//update($patient);
 end
 
 rule "Regra 26"
@@ -284,8 +285,8 @@ rule "Regra 26"
 		$patient : Patient()
 		eval($patient.getPreMorbida() > $patient.getCronica() && $patient.getPreMorbida() > $patient.getAguda() && $patient.getPreMorbida() > $patient.getProdromica())
 	then
-		$patient.setFase("Pré Mórbida");
-		update($patient);
+		$patient.setFase("Prï¿½ Mï¿½rbida");
+		//update($patient);
 end
 
 rule "Regra 27"
@@ -295,7 +296,8 @@ rule "Regra 27"
 		eval($patient.getAguda() > $patient.getCronica() && $patient.getAguda() > $patient.getProdromica() && $patient.getAguda() > $patient.getPreMorbida())
 	then
 		$patient.setFase("Aguda");
-		update($patient);
+		System.out.println("Fase Aguda");
+		//update($patient);
 end
 
 rule "Regra 28"
@@ -305,17 +307,18 @@ rule "Regra 28"
 		eval($patient.getAguda() > 64)
 	then
 		$patient.setFase("Aguda");
-		update($patient);
+		System.out.println("Fase Aguda");
+		//update($patient);
 end
 
 rule "Regra 29"
 
 	when
 		$patient : Patient()
-		eval($patient.getFase().equalsIgnoreCase("Aguda") || $patient.getFase().equalsIgnoreCase("Crônica"))
+		eval($patient.getFase().equalsIgnoreCase("Aguda") || $patient.getFase().equalsIgnoreCase("Crï¿½nica"))
 	then
 		$patient.setRemediar(true);
-		update($patient);
+		//update($patient);
 end
 
 rule "Regra 30"
@@ -324,18 +327,19 @@ rule "Regra 30"
 		$patient : Patient()
 		eval($patient.getFase().equalsIgnoreCase("Aguda") || $patient.isRemediar())
 	then
-		$patient.addRecomendacoes("Remédio de primeira geração");
-		update($patient);
+		$patient.addRecomendacoes("Remï¿½dio de primeira geraï¿½ï¿½o");
+		System.out.println("RecomendaÃ§Ã£o de remÃ©dio de primeira geraÃ§Ã£o");
+		//update($patient);
 end
 
 rule "Regra 31"
 
 	when
 		$patient : Patient()
-		eval($patient.getFase().equalsIgnoreCase("Crônica") || $patient.isRemediar())
+		eval($patient.getFase().equalsIgnoreCase("Crï¿½nica") || $patient.isRemediar())
 	then
-		$patient.addRecomendacoes("Remédio de segunda geração");
-		update($patient);
+		$patient.addRecomendacoes("Remï¿½dio de segunda geraï¿½ï¿½o");
+		//update($patient);
 end
 
 rule "Regra 32"
@@ -344,6 +348,7 @@ rule "Regra 32"
 		$patient : Patient()
 		eval($patient.getFase().equalsIgnoreCase("Aguda"))
 	then
-		$patient.addRecomendacoes("Internação");
-		update($patient);
+		$patient.addRecomendacoes("Internaï¿½ï¿½o");
+		System.out.println("RecomendaÃ§Ã£o de InternaÃ§Ã£o");
+		//update($patient);
 end
